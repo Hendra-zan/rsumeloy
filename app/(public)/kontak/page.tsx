@@ -75,7 +75,7 @@ export default async function ContactPage() {
                                 dangerouslySetInnerHTML={{
                                     __html: `
                                     document.addEventListener('DOMContentLoaded', function() {
-                                        document.getElementById('contact-note').innerHTML = ${JSON.stringify(note.content)};
+                                        document.getElementById('contact-note').innerHTML = ${note ? JSON.stringify(note.content) : '""'};
                                     });
                                     `
                                 }}
