@@ -1,0 +1,92 @@
+{
+  "name": "RSU Meloy",
+  "shortName": "RSU Meloy",
+  "description": "RSU Meloy - Rumah Sakit Umum di Sangatta Utara dengan pelayanan kesehatan komprehensif dan fasilitas modern.",
+  "placeId": "ChIJ_________________",
+  "address": {
+    "street": "Jl. Yos Sudarso II No.101",
+    "district": "Sangatta Utara",
+    "city": "Kutai Timur",
+    "province": "Kalimantan Timur",
+    "country": "Indonesia",
+    "postalCode": "75611"
+  },
+  "googleMaps": {
+    "latitude": 0.505139864509427,
+    "longitude": 117.53498808013812,
+    "embedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d498.70790760743637!2d117.53498808013812!3d0.505139864509427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x320a357123eebbfd%3A0xf44dda0e133317bb!2sRumah%20Sakit%20Meloy%20Sangatta!5e0!3m2!1sid!2sid!4v1758760684934!5m2!1sid!2sid"
+  },
+  "contact": {
+    "phone": "(0549) 24222",
+    "email": "rsu_meloy@yahoo.co.id",
+    "whatsapp": "+628115495477"
+  },
+  "socialMedia": {
+    "facebook": "https://facebook.com/rsumeloy",
+    "instagram": "https://instagram.com/rsumeloy"
+  },
+  "businessHours": [
+    {
+      "days": "Senin - Minggu",
+      "hours": "24 Jam",
+      "note": "Unit Gawat Darurat (UGD)"
+    },
+    {
+      "days": "Senin - Jumat",
+      "hours": "08:00 - 16:00",
+      "note": "Poliklinik Rawat Jalan"
+    },
+    {
+      "days": "Sabtu",
+      "hours": "08:00 - 12:00",
+      "note": "Poliklinik Rawat Jalan"
+    }
+  ],
+  "facilities": [
+    "Unit Gawat Darurat 24 Jam",
+    "Poliklinik Spesialis",
+    "Ruang Rawat Inap",
+    "Laboratorium",
+    "Radiologi",
+    "Farmasi",
+    "Ruang Operasi",
+    "ICU/NICU",
+    "Ambulans"
+  ],
+  "specialists": [
+    "Dokter Spesialis Penyakit Dalam",
+    "Dokter Spesialis Anak",
+    "Dokter Spesialis Bedah",
+    "Dokter Spesialis Kandungan",
+    "Dokter Spesialis Saraf",
+    "Dokter Spesialis THT",
+    "Dokter Spesialis Mata",
+    "Dokter Spesialis Kulit dan Kelamin"
+  ],
+  "insurance": [
+    "BPJS Kesehatan",
+    "Mandiri Inhealth",
+    "Asuransi Astra",
+    "Admedika",
+    "BNI Life"
+  ],
+  "testimonials": [
+    {
+      "name": "Budi Santoso",
+      "rating": 5,
+      "review": "Pelayanan sangat baik dan cepat. Dokter dan perawat sangat profesional.",
+      "date": "2025-09-01"
+    },
+    {
+      "name": "Siti Rahayu",
+      "rating": 5,
+      "review": "Fasilitas lengkap dan bersih. Sangat membantu warga Sangatta.",
+      "date": "2025-08-15"
+    }
+  ],
+  "certifications": [
+    "Akreditasi Paripurna KARS",
+    "ISO 9001:2015",
+    "Sertifikasi Keselamatan Pasien"
+  ]
+}
