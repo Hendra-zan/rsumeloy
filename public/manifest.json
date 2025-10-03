@@ -1,0 +1,21 @@
+{
+  "name": "RSU Meloy",
+  "short_name": "RSU Meloy",
+  "description": "Aplikasi web RSU Meloy untuk akses informasi kesehatan dan layanan rumah sakit.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#006d77",
+  "icons": [
+    {
+      "src": "https://res.cloudinary.com/ddyqhlilj/image/upload/c_scale,w_192/logo_rsmeloy_web",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://res.cloudinary.com/ddyqhlilj/image/upload/c_scale,w_512/logo_rsmeloy_web",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

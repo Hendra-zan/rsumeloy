@@ -1,0 +1,145 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+/* Custom styles for prose content to enhance readability */
+/* This ensures paragraphs have comfortable line spacing for better reading flow. */
+.prose p {
+  line-height: 1.75;
+}
+/* Makes bold text more prominent and ensures high contrast. */
+.prose strong {
+  color: hsl(240 10% 3.9%); /* Use main foreground color */
+  font-weight: 600; /* Explicitly set to semi-bold */
+}
+/* Styles list markers with the primary brand color for a polished look. */
+.prose ul > li::marker {
+  color: hsl(190 100% 24%); /* Use primary color for list markers */
+}
+
+/* Custom scrollbar styles for AI chat */
+.chat-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-scrollbar::-webkit-scrollbar-thumb {
+  background: hsl(215 20% 65%);
+  border-radius: 3px;
+}
+
+.chat-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: hsl(215 25% 50%);
+}
+
+/* Smooth animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+/* Glassmorphism utility for navbar / topbars */
+.glass {
+  /* Fallback solid/semi-transparent background for browsers without backdrop-filter */
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(8, 26, 41, 0.06);
+  box-shadow: 0 6px 18px rgba(8,26,41,0.06);
+  transition: background 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+}
+
+/* Darker glass variant for when header is scrolled (uses primary tint) */
+.glass--primary {
+  background: rgba(0,109,119,0.06);
+  border: 1px solid rgba(0,109,119,0.08);
+  box-shadow: 0 8px 24px rgba(0,109,119,0.06);
+  transition: background 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+}
+
+/* Enable heavy glass effects only when browser supports backdrop-filter */
+@supports (backdrop-filter: blur(8px)) or (-webkit-backdrop-filter: blur(8px)) {
+  .glass {
+    background: linear-gradient(180deg, rgba(255,255,255,0.65) 0%, rgba(255,255,255,0.50) 100%);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+  }
+
+  .glass--primary {
+    background: linear-gradient(180deg, rgba(0,109,119,0.16) 0%, rgba(0,109,119,0.08) 100%);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+  }
+}
+
+/* Reduce blur on small screens for performance */
+@media (max-width: 640px) {
+  @supports (backdrop-filter: blur(8px)) or (-webkit-backdrop-filter: blur(8px)) {
+    .glass, .glass--primary {
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
+    }
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .glass, .glass--primary {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    transition: none !important;
+  }
+}
+
+/* Contrast and typographic improvements for glass surfaces */
+.glass, .glass--primary {
+  color: hsl(240 10% 6%); /* slightly darker text for readability */
+}
+
+.glass h1, .glass h2, .glass h3, .glass h4, .glass h5, .glass h6,
+.glass--primary h1, .glass--primary h2, .glass--primary h3, .glass--primary h4, .glass--primary h5, .glass--primary h6 {
+  color: hsl(240 10% 6%);
+}
+
+/* Muted text inside glass should be slightly darker than original muted to keep contrast */
+.glass .text-muted-foreground, .glass--primary .text-muted-foreground {
+  color: hsl(215 18% 45%);
+}
+
+/* Primary text (accent) inside glass should be more saturated */
+.glass .text-primary, .glass--primary .text-primary {
+  color: hsl(190 100% 24%);
+  font-weight: 600;
+}
+
+/* Badge contrast */
+.glass .badge, .glass--primary .badge,
+.glass .Badge, .glass--primary .Badge {
+  background: rgba(255,255,255,0.06);
+  color: hsl(240 10% 6%);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Improve spacing inside cards for readability */
+.glass .p-6, .glass .p-4, .glass--primary .p-6, .glass--primary .p-4 {
+  line-height: 1.6;
+}
