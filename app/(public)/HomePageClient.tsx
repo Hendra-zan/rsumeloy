@@ -286,7 +286,7 @@ const HomePageClient: React.FC<HomePageClientProps> = ({ services, partners, inf
                                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                                                 <div className="relative h-full flex flex-col justify-end p-8 md:p-12">
                                                     <h3 className="text-2xl md:text-4xl font-bold drop-shadow-lg">{item.title}</h3>
-                                                    <p className="mt-2 text-base md:text-lg max-w-2xl drop-shadow-md text-gray-200">{truncateText(item.description, 150)}</p>
+                                                    <p className="mt-2 text-base md:text-lg max-w-2xl drop-shadow-md text-gray-200">{truncateText(getPlainText(item.description), 150)}</p>
                                                     <Button asChild variant="link" className="p-0 h-auto mt-4 text-white font-semibold self-start hover:text-gray-200">
                                                         <Link href={`/info/${item.id}`}>
                                                             {t('selengkapnya')}
