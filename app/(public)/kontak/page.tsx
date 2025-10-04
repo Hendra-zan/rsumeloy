@@ -35,7 +35,7 @@ export default async function ContactPage() {
     
     const contactInfo = [
         { icon: Phone, title: 'Telepon UGD (24 Jam)', content: '(0549) 24222', href: 'tel:054924222' },
-        { icon: Phone, title: 'Pendaftaran WhatsApp', content: '+62 811-5495-477', href: `https://wa.me/628115495477?text=${encodeURIComponent(t('waRegistration'))}` },
+        { icon: Phone, title: 'Pendaftaran Online (APAM)', content: 'apam.rsumeloy.co.id', href: 'https://apam.rsumeloy.co.id' },
         { icon: Mail, title: 'Email', content: 'rsu_meloy@yahoo.co.id', href: 'mailto:rsu_meloy@yahoo.co.id' },
         { icon: MapPin, title: 'Alamat', content: 'Jl. Yos Sudarso II No.101, Sangatta Utara, Kab. Kutai Timur', href: 'https://www.google.com/maps/search/?api=1&query=RSU+Meloy+Sangatta' }
     ];

@@ -12,7 +12,7 @@ import Link from 'next/link';
 const Footer: React.FC = () => {
     const { t } = useLanguage();
     const router = useRouter();
-    const waUrl = `https://wa.me/628115495477?text=${encodeURIComponent(t('waRegistration'))}`;
+    const apamUrl = 'https://apam.rsumeloy.co.id';
     const googleMapsUrl = "https://www.google.com/maps/search/?api=1&query=RSU+Meloy+Sangatta";
     const phoneUrl = "tel:054924222";
 
@@ -66,7 +66,7 @@ const Footer: React.FC = () => {
                         <div className="flex space-x-2">
                             <Button size="icon" variant="ghost" className="hover:bg-primary-foreground/10" asChild><a href="https://www.facebook.com/rsumeloy" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><Facebook className="h-5 w-5" /></a></Button>
                             <Button size="icon" variant="ghost" className="hover:bg-primary-foreground/10" asChild><a href="https://x.com/Rsumeloy" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><TwitterIcon className="h-5 w-5" /></a></Button>
-                            <Button size="icon" variant="ghost" className="hover:bg-primary-foreground/10" asChild><a href={waUrl} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><WhatsAppIcon className="h-5 w-5" /></a></Button>
+                            <Button size="icon" variant="ghost" className="hover:bg-primary-foreground/10" asChild><a href={apamUrl} target="_blank" rel="noopener noreferrer" aria-label="APAM"><WhatsAppIcon className="h-5 w-5" /></a></Button>
                             <Button size="icon" variant="ghost" className="hover:bg-primary-foreground/10" asChild><a href="https://www.instagram.com/rsumeloy" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Instagram className="h-5 w-5" /></a></Button>
                             {typeof window !== 'undefined' && 'share' in navigator && (
                                 <Button size="icon" variant="ghost" className="hover:bg-primary-foreground/10" onClick={handleShareWebsite} aria-label="Bagikan Website">

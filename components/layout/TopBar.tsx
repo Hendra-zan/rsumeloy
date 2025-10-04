@@ -22,7 +22,7 @@ interface TopBarProps {
 
 const TopBar: React.FC<TopBarProps> = ({ isScrolled }) => {
     const { t } = useLanguage();
-    const waUrl = `https://wa.me/628115495477?text=${encodeURIComponent(t('waRegistration'))}`;
+    const apamUrl = 'https://apam.rsumeloy.co.id';
     const emailAddress = 'rsu_meloy@yahoo.co.id';
     const [emailText, setEmailText] = useState(emailAddress);
 
@@ -45,7 +45,7 @@ const TopBar: React.FC<TopBarProps> = ({ isScrolled }) => {
                         <Mail className="h-4 w-4" />
                         <span className="hidden md:inline">{emailText}</span>
                     </a>
-                    <a href={waUrl} target="_blank" rel="noopener noreferrer" className="hidden sm:flex items-center gap-2 hover:text-gray-200 transition-colors">
+                    <a href={apamUrl} target="_blank" rel="noopener noreferrer" className="hidden sm:flex items-center gap-2 hover:text-gray-200 transition-colors">
                         <WhatsAppIcon className="h-4 w-4" />
                         <span>{t('waDaftar')}</span>
                     </a>

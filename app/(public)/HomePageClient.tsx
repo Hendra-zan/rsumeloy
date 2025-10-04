@@ -108,7 +108,7 @@ const HomePageClient: React.FC<HomePageClientProps> = ({ services, partners, inf
 
     const quickAccessItems = [
         { icon: DoctorIcon, titleKey: 'jadwalDokter', subtitle: 'Temukan spesialis kami', action: () => router.push('/jadwal-dokter') },
-        { icon: WhatsAppIcon, titleKey: 'waDaftar', subtitle: 'Daftar online via WA', action: () => window.open(`https://wa.me/628115495477?text=${encodeURIComponent(t('waRegistration'))}`, '_blank') },
+        { icon: WhatsAppIcon, titleKey: 'waDaftar', subtitle: 'Daftar online (APAM)', action: () => window.open('https://apam.rsumeloy.co.id', '_blank') },
         { icon: Heart, titleKey: 'layanan', subtitle: 'Lihat layanan unggulan', action: () => router.push('/layanan') },
         { icon: MapPin, titleKey: 'kontak', subtitle: 'Lokasi & informasi', action: () => router.push('/kontak') }
     ];

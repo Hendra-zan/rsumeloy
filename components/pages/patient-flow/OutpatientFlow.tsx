@@ -32,7 +32,7 @@ const OutpatientFlow: React.FC = () => {
     ];
 
     const onlineSteps = [
-        { title: 'Hubungi via WhatsApp', description: 'Kirim pesan pendaftaran ke nomor +62 811-5495-477 pada jam operasional (Senin-Sabtu, 08:00 - 14:00 WITA).' },
+        { title: 'Daftar via APAM', description: 'Kunjungi apam.rsumeloy.co.id untuk mendaftar secara online (Senin-Sabtu, 08:00 - 14:00 WITA).' },
         { title: 'Kirim Dokumen', description: 'Ikuti instruksi petugas untuk mengirimkan foto KTP dan kartu jaminan kesehatan (Asuransi) jika ada.' },
         { title: 'Terima Konfirmasi', description: 'Anda akan menerima nomor antrian dan konfirmasi jadwal konsultasi dari petugas kami.' },
         { title: 'Verifikasi di RS', description: 'Datang 15 menit sebelum jadwal, lakukan verifikasi ulang di loket pendaftaran untuk mendapatkan berkas rekam medis.' },
@@ -72,7 +72,7 @@ const OutpatientFlow: React.FC = () => {
             
             <div className="border-t pt-16">
                 <div className="text-center mb-10">
-                    <h3 className="text-3xl font-bold text-primary">Alur Pendaftaran Online (via WhatsApp)</h3>
+                    <h3 className="text-3xl font-bold text-primary">Alur Pendaftaran Online (via APAM)</h3>
                     <p className="text-lg text-muted-foreground mt-2">Daftar lebih mudah dari rumah (untuk pasien umum/asuransi non-BPJS).</p>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
