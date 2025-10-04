@@ -127,13 +127,44 @@ export const collectionConfigs: Record<string, CollectionConfig> = {
         title: 'Info Terkini (Billboard)',
         icon: Megaphone,
         fields: [
-            { name: 'title', label: 'Judul Iklan', type: 'text', required: true },
-            { name: 'description', label: 'Teks Iklan', type: 'textarea', required: true },
-            { name: 'image_public_id', label: 'Cloudinary Public ID Gambar (16:7)', type: 'text', required: true, placeholder: 'rsu-meloy/info/nama-file' },
+            { 
+                name: 'title', 
+                label: 'Judul Informasi', 
+                type: 'text', 
+                required: true,
+                placeholder: 'Contoh: Jadwal Praktek Dokter Spesialis Jantung'
+            },
+            { 
+                name: 'description', 
+                label: 'Isi Informasi', 
+                type: 'richtext', 
+                required: true,
+                placeholder: 'Tulis informasi lengkap di sini...'
+            },
+            { 
+                name: 'image_public_id', 
+                label: 'Gambar Ilustrasi (16:7)', 
+                type: 'text', 
+                required: true, 
+                placeholder: 'rsu-meloy/info/nama-file'
+            },
         ],
         displayColumns: [
-            { header: 'Judul Iklan', accessor: 'title' },
-            { header: 'Deskripsi', accessor: 'description', className: 'line-clamp-2' },
+            { 
+                header: 'Judul', 
+                accessor: 'title',
+                className: 'font-semibold'
+            },
+            { 
+                header: 'Deskripsi', 
+                accessor: 'description', 
+                className: 'prose-sm line-clamp-3'
+            },
+            {
+                header: 'Tanggal',
+                accessor: 'created_at',
+                className: 'text-sm text-muted-foreground'
+            }
         ]
     },
     page_notes: {

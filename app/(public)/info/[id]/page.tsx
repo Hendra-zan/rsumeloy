@@ -68,7 +68,13 @@ export default async function InfoDetailPage({ params }: { params: { id: string 
                         </div>
 
                         <article className="prose lg:prose-lg max-w-none">
-                          <p>{item.description}</p>
+                            <div className="mb-8 p-6 bg-secondary rounded-lg">
+                                <div className="text-sm text-muted-foreground mb-2">
+                                    Dipublikasikan pada: {formatDate(item.created_at)}
+                                </div>
+                                <h1 className="text-3xl font-bold mb-4">{item.title}</h1>
+                            </div>
+                            <div className="mt-6" dangerouslySetInnerHTML={{ __html: item.description }} />
                         </article>
                     </div>
                 </div>
