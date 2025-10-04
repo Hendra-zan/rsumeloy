@@ -110,7 +110,7 @@ export const getVacancies = cache(async () => {
 
 export const getInfo = cache(async () => {
     const supabase = createClient();
-    const { data, error } = await supabase.from('info_items').select('*').order('created_at', { ascending: false });
+    const { data, error } = await supabase.from('info').select('*').order('created_at', { ascending: false });
     if (error) {
         console.error('Error fetching info:', error.message);
         return [];
