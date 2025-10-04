@@ -218,7 +218,14 @@ export const collectionConfigs: Record<string, CollectionConfig> = {
                 label: 'Instruksi Sistem untuk AI', 
                 type: 'textarea', 
                 required: true,
-                placeholder: 'Contoh: Anda adalah Asisten AI yang ramah untuk RSU Meloy...'
+                placeholder: `Contoh:
+Anda adalah Asisten AI yang ramah untuk RSU Meloy. Informasi penting:
+
+- Alamat: Jl. Yos Sudarso II No.101, Sangatta Utara
+- UGD 24 Jam: (0549) 24222
+- Pendaftaran Online: https://apam.rsumeloy.co.id (Senin-Sabtu, 08:00-14:00)
+
+Untuk pendaftaran, selalu arahkan ke APAM...`
             },
         ],
         displayColumns: [
