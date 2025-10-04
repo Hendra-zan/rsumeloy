@@ -94,24 +94,8 @@ export const getArticleBySlug = cache(async (slug: string) => {
 });
 
 export const getInfoItems = cache(async () => {
-    // Gunakan data fallback saat build time di Vercel
-    if (isVercelBuild) {
-        console.log('Using fallback info items data during build');
-        return fallbackInfoItems;
-    }
-    
-    try {
-        const supabase = createClient();
-        const { data, error } = await supabase.from('info_items').select('*');
-        if (error) {
-            console.error('Error fetching info items:', error.message);
-            return fallbackInfoItems;
-        }
-        return data;
-    } catch (error) {
-        console.error('Error fetching info items:', error);
-        return fallbackInfoItems;
-    }
+    // Redirect to getInfo() untuk konsistensi
+    return getInfo();
 });
 
 export const getVacancies = cache(async () => {
@@ -126,7 +110,7 @@ export const getVacancies = cache(async () => {
 
 export const getInfo = cache(async () => {
     const supabase = createClient();
-    const { data, error } = await supabase.from('info').select('*').order('created_at', { ascending: false });
+    const { data, error } = await supabase.from('info_items').select('*').order('created_at', { ascending: false });
     if (error) {
         console.error('Error fetching info:', error.message);
         return [];
@@ -135,10 +119,17 @@ export const getInfo = cache(async () => {
 });
 
 export const getInfoItemById = cache(async (id: string) => {
+    // Gunakan data fallback saat build time di Vercel
+    if (isVercelBuild) {
+        console.log('Using fallback info data during build');
+        const fallbackItem = fallbackInfoItems.find(item => item.id === id);
+        return fallbackItem || null;
+    }
+
     const supabase = createClient();
-    const { data, error } = await supabase.from('info_items').select('*').eq('id', id).single();
+    const { data, error } = await supabase.from('info').select('*').eq('id', id).single();
     if (error) {
-        console.error(`Error fetching info item by id ${id}:`, error.message);
+        console.error(`Error fetching info by id ${id}:`, error.message);
         return null;
     }
     return data;

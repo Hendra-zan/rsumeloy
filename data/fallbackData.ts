@@ -49,6 +49,15 @@ export const fallbackFacilities = [
 
 export const fallbackInfoItems = [
   {
+    id: '617e93a0-c5ee-49d0-95c3-f939e2be945a',
+    title: 'Jadwal Dokter Update',
+    description: 'Informasi terbaru mengenai jadwal praktik dokter RSU Meloy',
+    content: 'Silakan cek halaman jadwal dokter untuk informasi lengkap.',
+    image_public_id: 'info/schedule_update',
+    created_at: '2025-10-04T00:00:00.000Z'
+  }
+];
+  {
     id: 1,
     title: "Jam Operasional",
     content: "Senin-Jumat: 08.00-20.00, Sabtu: 08.00-15.00, Minggu: Tutup",
