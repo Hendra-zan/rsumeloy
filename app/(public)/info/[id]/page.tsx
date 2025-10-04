@@ -35,13 +35,18 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
 }
 
 export default async function InfoDetailPage({ params }: { params: { id: string } }) {
-    const item = await getInfoItemById(params.id);
+    console.log('Rendering InfoDetailPage for id:', params.id);
+    
+    try {
+        const item = await getInfoItemById(params.id);
+        console.log('Retrieved item:', item);
 
-    if (!item) {
-        notFound();
-    }
+        if (!item) {
+            console.log('Item not found, redirecting to 404');
+            notFound();
+        }
 
-    return (
+        return (
         <div className="animate-fade-in">
             <PageHeader
                 title={item.title}
@@ -69,5 +74,9 @@ export default async function InfoDetailPage({ params }: { params: { id: string 
                 </div>
             </div>
         </div>
-    );
+        );
+    } catch (error) {
+        console.error('Error in InfoDetailPage:', error);
+        notFound();
+    }
 }

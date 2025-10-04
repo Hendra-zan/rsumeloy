@@ -109,30 +109,68 @@ export const getVacancies = cache(async () => {
 });
 
 export const getInfo = cache(async () => {
-    const supabase = createClient();
-    const { data, error } = await supabase.from('info').select('*').order('created_at', { ascending: false });
-    if (error) {
-        console.error('Error fetching info:', error.message);
-        return [];
+    console.log('Fetching all info items...');
+    
+    // Gunakan data fallback saat build time di Vercel
+    if (isVercelBuild) {
+        console.log('Using fallback info data during build');
+        return fallbackInfoItems;
     }
-    return data;
+
+    try {
+        const supabase = createClient();
+        console.log('Querying Supabase for all info items...');
+        const { data, error } = await supabase.from('info').select('*').order('created_at', { ascending: false });
+        
+        if (error) {
+            console.error('Error fetching info:', error.message);
+            console.log('Using fallback data after error');
+            return fallbackInfoItems;
+        }
+        
+        if (!data || data.length === 0) {
+            console.log('No info items found in database, using fallback data');
+            return fallbackInfoItems;
+        }
+        
+        console.log(`Successfully fetched ${data.length} info items`);
+        return data;
+    } catch (error) {
+        console.error('Unexpected error in getInfo:', error);
+        return fallbackInfoItems;
+    }
 });
 
 export const getInfoItemById = cache(async (id: string) => {
+    console.log('Fetching info item with id:', id);
+    
     // Gunakan data fallback saat build time di Vercel
     if (isVercelBuild) {
         console.log('Using fallback info data during build');
         const fallbackItem = fallbackInfoItems.find(item => item.id === id);
+        console.log('Found fallback item:', fallbackItem);
         return fallbackItem || null;
     }
 
-    const supabase = createClient();
-    const { data, error } = await supabase.from('info').select('*').eq('id', id).single();
-    if (error) {
-        console.error(`Error fetching info by id ${id}:`, error.message);
+    try {
+        const supabase = createClient();
+        console.log('Querying Supabase for info item...');
+        const { data, error } = await supabase.from('info').select('*').eq('id', id).single();
+        
+        if (error) {
+            console.error(`Error fetching info by id ${id}:`, error.message);
+            // Coba fallback data jika query gagal
+            const fallbackItem = fallbackInfoItems.find(item => item.id === id);
+            console.log('Attempting fallback after error, found:', fallbackItem);
+            return fallbackItem || null;
+        }
+        
+        console.log('Successfully fetched info item:', data);
+        return data;
+    } catch (error) {
+        console.error('Unexpected error in getInfoItemById:', error);
         return null;
     }
-    return data;
 });
 
 export const getArticles = cache(async () => {
